@@ -7,18 +7,47 @@ function BlogDetails() {
   const [blog, setBlog] = useState(null);
 
   useEffect(() => {
-    fetch(`http://localhost:8000/blogs/${id}`)
-      .then(res => res.json())
-      .then(data => setBlog(data));
-  }, [id]);
+  setBlogs([
+    {
+      title: "Startup thoughts",
+      body: "Ideas are easy, execution is everything.",
+      author: "Manav",
+      id: 1
+    },
+    {
+      title: "Design is power",
+      body: "Good design is invisible but impactful.",
+      author: "Pratham",
+      id: 2
+    },
+    {
+      title: "Code & Coffee",
+      body: "Nothing beats a debugging session at 2AM.",
+      author: "Khushank",
+      id: 3
+    },
+    {
+      title: "Productivity hack",
+      body: "A focused 30 minutes beats 3 distracted hours.",
+      author: "Anshuman",
+      id: 4
+    },
+    {
+      title: "Build fast, break fast",
+      body: "Ship it. Fix it. Improve it.",
+      author: "Karthik",
+      id: 5
+    },
+    {
+      title: "Stay curious",
+      body: "The best ideas come from asking better questions.",
+      author: "Krishna",
+      id: 6
+    }
+  ]);
+}, []);
 
-  const handleDelete = () => {
-    fetch(`http://localhost:8000/blogs/${id}`, {
-      method: "DELETE"
-    }).then(() => {
-      navigate("/");
-    });
-  };
+ 
 
   return (
     <div>
