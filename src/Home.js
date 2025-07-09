@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import BlogList from "./BlogList";
+import BlogList from "./components/BlogList";
 
 const Home = () => {
   const [blogs, setBlogs] = useState(null);

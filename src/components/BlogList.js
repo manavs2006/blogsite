@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 
 const BlogList = ({ blogs, title }) => {
+  if (!blogs || !Array.isArray(blogs)) return <p>No blogs to display</p>;
+
   return (
     <div className="blog-list">
       <h2>{title}</h2>

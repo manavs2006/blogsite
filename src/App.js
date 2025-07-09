@@ -1,22 +1,21 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import BlogList from "./components/BlogList";
-import BlogDetails from "./components/BlogDetails";
-import CreateBlogForm from "./components/CreateBlogForm";
-import NotFound from "./components/NotFound";
-import './App.css';
-
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar"; 
+import Home from "./Home";
+import Create from "./components/Create";
+import NotFound from "./NotFound";
 
 function App() {
   return (
     <Router>
       <div className="App">
-        <h1>Dojo Blog</h1>
-        <Routes>
-          <Route path="/" element={<BlogList />} />
-          <Route path="/create" element={<CreateBlogForm />} />
-          <Route path="/blogs/:id" element={<BlogDetails />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <Navbar />
+        <div className="content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/create" element={<Create />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </div>
       </div>
     </Router>
   );
